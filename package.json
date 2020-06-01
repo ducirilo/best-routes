@@ -1,0 +1,51 @@
+{
+  "name": "best-routes",
+  "version": "0.0.1",
+  "description": "Best Routes",
+  "main": "src/index.js",
+  "scripts": {
+    "test-watch": "jest --watchAll",
+    "test-coverage": "jest --coverage",
+    "test": "jest && yarn depcheck",
+    "lint": "standard \"src/**/*.js\"",
+    "lint-fix": "standard \"src/**/*.js\" --fix",
+    "start": "src/index.js",
+    "depcheck": "depcheck --ignore-bin-package=true --ignores=pg,sqlite3"
+  },
+  "author": "Carlos Eduardo Cirilo Guerra",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "commander": "^5.1.0",
+    "csvtojson": "^2.0.10",
+    "express": "^4.17.1",
+    "fs-extra": "^9.0.0",
+    "http-status-codes": "^1.4.0",
+    "json2csv": "^5.0.1"
+  },
+  "devDependencies": {
+    "depcheck": "^0.9.2",
+    "jest": "^26.0.1",
+    "mocha": "^7.2.0",
+    "nyc": "^15.0.1",
+    "standard": "^14.3.4",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "testRegex": ".spec.js",
+    "testPathIgnorePatterns": [
+      "node_modules"
+    ]
+  },
+  "nyc": {
+    "all": true,
+    "exclude": [
+      "node_modules",
+      "prod_node_modules",
+      "src/db",
+      "src/index.js",
+      "**/*.spec.js",
+      "coverage"
+    ]
+  }
+}
