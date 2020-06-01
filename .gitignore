@@ -484,3 +484,6 @@ gradle-app.setting
 !**/*/.gitkeep
 !src/**/*
 src/.DS_Store
+
+.vscode
+.vscode/launch.json
